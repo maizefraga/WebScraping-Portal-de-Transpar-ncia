@@ -4,10 +4,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.firefox.options import Options
 import json
 
 
-navegador = webdriver.Firefox()
+#para não abrir o browser
+options = Options()
+options.headless = True
+navegador = webdriver.Firefox(options=options)
 
 
 #Abrir o navegador
