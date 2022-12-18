@@ -6,7 +6,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-import json
 
 
 # ABRIR NAVEGADOR HEADLESS
@@ -130,9 +129,5 @@ while j < quantidade_paginas:
     sleep(1)
 
 print(map)
-
-file = open('map.json', 'w')
-json.dump(map, file, ensure_ascii=False)
-file.close()
 
 navegador.close()
