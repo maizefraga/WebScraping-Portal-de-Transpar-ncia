@@ -14,8 +14,8 @@ options.add_argument("--headless")
 navegador = webdriver.Chrome(chrome_options=options)
 navegador.get(
     'https://www.gp.srv.br/transparencia_barradogarcas/servlet/contrato_servidor_v3?1')
+# WINDOW_HANDLES É PARA ADMINISTRAR MÚLTIPLAS JANELAS
 navegador.window_handles
-
 print("navegador")
 
 # CLICAR EM PESQUISAR
@@ -122,7 +122,8 @@ def ler_tabela(map, nomes):
         # LER A TABELA
         ler_tab_interna(map=map, nomes=nomes)
         print(i)
-
+        
+        #VOLTAR PARA PÁGINA DE ORIGEM
         navegador.switch_to.window(window_before)
         i += 1
     return (map, nomes)
