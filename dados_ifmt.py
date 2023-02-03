@@ -9,9 +9,13 @@ from webdriver_manager.chrome import ChromeDriverManager
 import json
 from urllib.request import urlopen
 
+#Atribui a url do arquivo JSON a uma variavel
 url22 = "https://dados.ifmt.edu.br/dataset/6b7c7c38-587a-436b-a7b2-4e3ca59d1ca8/resource/e33bbded-18d9-46af-bc29-702093ae1347/download/aluno.json"
+#Procura um retorno para essa url
 response22 = urlopen(url22)
+#atribui o valor desse arquivo em uma variável
 data22 = json.loads(response22.read())
+#Cria um arquivo JSON
 file = open('data22.json', 'w')
 json.dump(data22, file, ensure_ascii=False)
 file.close()
